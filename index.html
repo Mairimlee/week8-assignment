@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Button Page</title>
+    <style>
+        /* Forces the page to look right and centers everything on the screen */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Keeps the button and the generated text stacked in the center */
+        .center-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #result-container {
+            font-size: 20px;
+            line-height: 1.8;
+            font-weight: bold;
+            color: #17a2b8;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="center-container">
+        <button id="action-btn">Click Me!</button>
+        <div id="result-container"></div>
+    </div>
+
+    <script>
+        // The script handles the click event and console logs perfectly here
+        document.getElementById("action-btn").addEventListener("click", function() {
+            const resultDiv = document.getElementById("result-container");
+            
+            console.log("Button clicked! Starting to print sentences...");
+            resultDiv.innerHTML = ""; 
+            
+            for (let i = 1; i <= 10; i++) {
+                resultDiv.innerHTML += i + ". I am awesome!<br>";
+                console.log("Printed sentence number: " + i);
+            }
+            
+            console.log("Done! All 10 sentences successfully displayed.");
+        });
+    </script>
+</body>
+</html>
